@@ -1,0 +1,50 @@
+{
+  "name": "Material Design 3",
+  "description": "Purple primary, MD3 tonal surfaces, Roboto font. Based on Material Design 3 baseline theme.",
+
+  "canvas": {
+    "width": 1440,
+    "height": 900,
+    "marketingWidth": 1440
+  },
+
+  "tokens": {
+    "color-primary":        "#6750A4",
+    "color-primary-dark":   "#4F378B",
+    "color-accent":         "#7D5260",
+    "color-background":     "#FFFBFE",
+    "color-surface":        "#FFFBFE",
+    "color-border":         "#E7E0EC",
+    "color-text":           "#1C1B1F",
+    "color-text-muted":     "#49454F",
+    "color-success":        "#386A20",
+    "color-warning":        "#7D5700",
+    "color-error":          "#B3261E",
+    "font-sans":            "Roboto",
+    "font-mono":            "Roboto Mono",
+    "font-serif":           "Georgia",
+    "spacing-card":         "24",
+    "spacing-gap-sm":       "8",
+    "spacing-gap-md":       "16",
+    "spacing-gap-lg":       "24",
+    "spacing-gap-xl":       "32",
+    "content-max-width":    "1120",
+    "sidebar-width":        "240"
+  },
+
+  "scaffold": {
+    "sidebarWidth":         240,
+    "pageAreaWidth":        1200,
+    "contentMax":           1120,
+    "marketingContentMax":  800,
+    "sidebarBg":            "#1C1B1F",
+    "pageBg":               "#FFFBFE",
+    "surface":              "#FFFBFE",
+    "border":               "#E7E0EC",
+    "statsBg":              "#4A4458",
+    "tableHeaderBg":        "#E7E0EC",
+    "heroBg":               "#4F378B",
+    "leftPanelWidth":       448,
+    "rightPanelWidth":      672
+  }
+}

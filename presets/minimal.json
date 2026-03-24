@@ -1,0 +1,50 @@
+{
+  "name": "Minimal / Neutral",
+  "description": "Pure grayscale, no brand color, system fonts. A clean slate — good for prototyping or monochrome brands.",
+
+  "canvas": {
+    "width": 1440,
+    "height": 900,
+    "marketingWidth": 1440
+  },
+
+  "tokens": {
+    "color-primary":        "#171717",
+    "color-primary-dark":   "#0A0A0A",
+    "color-accent":         "#525252",
+    "color-background":     "#FAFAFA",
+    "color-surface":        "#FFFFFF",
+    "color-border":         "#E5E5E5",
+    "color-text":           "#0A0A0A",
+    "color-text-muted":     "#737373",
+    "color-success":        "#15803D",
+    "color-warning":        "#B45309",
+    "color-error":          "#B91C1C",
+    "font-sans":            "system-ui",
+    "font-mono":            "ui-monospace",
+    "font-serif":           "Georgia",
+    "spacing-card":         "24",
+    "spacing-gap-sm":       "8",
+    "spacing-gap-md":       "16",
+    "spacing-gap-lg":       "24",
+    "spacing-gap-xl":       "32",
+    "content-max-width":    "1088",
+    "sidebar-width":        "240"
+  },
+
+  "scaffold": {
+    "sidebarWidth":         240,
+    "pageAreaWidth":        1200,
+    "contentMax":           1088,
+    "marketingContentMax":  768,
+    "sidebarBg":            "#171717",
+    "pageBg":               "#FAFAFA",
+    "surface":              "#FFFFFF",
+    "border":               "#E5E5E5",
+    "statsBg":              "#262626",
+    "tableHeaderBg":        "#F5F5F5",
+    "heroBg":               "#0A0A0A",
+    "leftPanelWidth":       435,
+    "rightPanelWidth":      653
+  }
+}

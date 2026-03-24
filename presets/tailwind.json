@@ -1,0 +1,50 @@
+{
+  "name": "Tailwind CSS",
+  "description": "Blue primary, slate sidebar, gray neutrals, Inter font. Based on Tailwind CSS v3 default palette.",
+
+  "canvas": {
+    "width": 1440,
+    "height": 900,
+    "marketingWidth": 1440
+  },
+
+  "tokens": {
+    "color-primary":        "#2563EB",
+    "color-primary-dark":   "#1D4ED8",
+    "color-accent":         "#0EA5E9",
+    "color-background":     "#F9FAFB",
+    "color-surface":        "#FFFFFF",
+    "color-border":         "#E5E7EB",
+    "color-text":           "#111827",
+    "color-text-muted":     "#6B7280",
+    "color-success":        "#16A34A",
+    "color-warning":        "#D97706",
+    "color-error":          "#DC2626",
+    "font-sans":            "Inter",
+    "font-mono":            "JetBrains Mono",
+    "font-serif":           "Georgia",
+    "spacing-card":         "24",
+    "spacing-gap-sm":       "8",
+    "spacing-gap-md":       "16",
+    "spacing-gap-lg":       "24",
+    "spacing-gap-xl":       "32",
+    "content-max-width":    "1088",
+    "sidebar-width":        "256"
+  },
+
+  "scaffold": {
+    "sidebarWidth":         256,
+    "pageAreaWidth":        1184,
+    "contentMax":           1088,
+    "marketingContentMax":  768,
+    "sidebarBg":            "#0F172A",
+    "pageBg":               "#F9FAFB",
+    "surface":              "#FFFFFF",
+    "border":               "#E5E7EB",
+    "statsBg":              "#1E3A8A",
+    "tableHeaderBg":        "#F9FAFB",
+    "heroBg":               "#1E3A8A",
+    "leftPanelWidth":       435,
+    "rightPanelWidth":      653
+  }
+}
