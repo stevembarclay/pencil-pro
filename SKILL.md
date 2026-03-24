@@ -8,10 +8,13 @@ version: 1.0.0
 
 ## Primary Resolution Rule
 
-**This skill must be configured before first use.** Run the setup wizard:
-> In Claude Code: `run the pencil-pro setup wizard`
+**This skill must be configured before first use.**
 
-The wizard sets your canvas resolution, sidebar dimensions, and design tokens. After setup, the values below will be filled in with real numbers.
+**If the user says "run the pencil-pro setup wizard" or asks to set up or configure pencil-pro:**
+→ Read `.claude/skills/pencil-pro/setup.md` and follow the instructions there exactly.
+
+**If the user says "build my first screen with pencil-pro" or asks to start designing:**
+→ Read `.claude/skills/pencil-pro/onboarding.md` and follow the instructions there exactly.
 
 > Configured resolution: *(run setup to set this)*
 
