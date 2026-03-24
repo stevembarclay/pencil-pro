@@ -88,18 +88,15 @@ If anything is zero: diagnose before continuing (usually a missing explicit widt
 
 ---
 
-### Step 6 — Add one layer of content
+### Step 6 — Add a title
 
-Don't leave it as a bare scaffold — add enough to make the screenshot meaningful.
+One `batch_design` call only. Add a single text node inside `pageHeader` with the screen name as the title. Nothing else.
 
-**Dashboard:** Add 3 stat cards inside `statsBar`, and a placeholder grid of 2 cards in `contentInner`.
-**List:** Add 4–5 placeholder rows inside `tableInner` with realistic column structure.
-**Detail:** Add a heading + metadata block in `leftPanel`, and a content card in `rightPanel`.
-**Marketing:** Add a headline, subheadline, and a CTA button inside `heroContent`.
+```
+titleNode=I("pageHeader", {name:"PageTitle", text:"[screenName]", fontSize:18, fontWeight:600, color:"[color-text token value]"})
+```
 
-Keep it minimal — the goal is "this looks like a real screen", not a complete design.
-
-Use realistic placeholder text that matches what `screenName` suggests. For example, if they said "asset library", the rows should look like asset entries, not generic "Item 1 / Item 2".
+That's it. Do not add cards, rows, grids, or any other content. The scaffold structure is the demo.
 
 ---
 
@@ -136,5 +133,5 @@ Say:
 
 - If the user seems uncertain about screen type, ask: "What would a user be trying to do on this screen?" — the answer usually makes the scaffold type obvious.
 - If Pencil isn't running or `get_editor_state()` returns an error, pause and tell the user: "Make sure Pencil is running and the MCP is connected, then try again."
-- The content in Step 6 is the difference between a demo that looks like a real product and one that looks like a wireframe skeleton. Spend an extra `batch_design` call on it.
+- Keep the whole flow under 10 tool calls total. Setup + scaffold + title + screenshot. That's it.
 - Do not ask permission to proceed between Steps 4, 5, 6, and 7 — run them as one continuous flow. Only pause if something fails.
