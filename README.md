@@ -1,115 +1,80 @@
 # pencil-pro
 
-> Advanced Pencil.dev workflows for Claude Code — design token propagation, canvas archaeology, bulk property replacement, spatial management, and complete MCP tool reference.
-
-A Claude Code skill that gives Claude structured, opinionated knowledge of the [Pencil.dev MCP server](https://pencil.dev). Instead of fumbling through tool calls, Claude follows proven workflows: how to explore a `.pen` file before touching it, how to propagate a token change across an entire file, how to place new screens without overlap, and how to scaffold app and marketing layouts from scratch.
-
-Comes with a **setup wizard** that configures the skill for your design system in under a minute — pick a preset (Tailwind, shadcn/ui, Material, Minimal) or walk through 6 questions to configure your own.
+> Structured Pencil.dev workflows for Claude Code. Gives Claude a design playbook and science-backed defaults so it stops guessing and starts building intentionally.
 
 <video src="https://github.com/stevembarclay/pencil-pro/releases/download/v1.1.0/demo.mp4" controls width="100%"></video>
 
 ---
 
-## What's Inside
+## Why this exists
 
-**5 core workflows:**
+When you ask Claude to design something in Pencil without any guidance, it fumbles. It invents colors, picks arbitrary font sizes, sets disabled buttons to 50% opacity because that "feels right," and edits directly into whatever file is open without checking what's already there. The output looks like a Figma template someone downloaded in 2019.
 
-| Workflow | Use when |
-|---|---|
-| Canvas Archaeology | "What's in this .pen file?" — explore before editing |
-| Design Token Propagation | A color or font changed — push it across the file |
-| Canvas Spatial Management | Adding a new screen — find where to put it |
-| Style Guide Pull | Building a page type you haven't designed before |
-| Bulk Property Inspection | Audit for consistency before a token replacement |
+The problem isn't Claude — it's that good design has specific, defensible values that Claude doesn't know unless you tell it:
 
-**4 scaffold archetypes** — ready-to-run `batch_design` scripts for Dashboard, List/Queue, Detail/Review, and Marketing Page layouts.
+- Hover states need at least an **8% lightness delta** or they're imperceptible on most monitors
+- Disabled elements at **40% opacity** (not 50%) — 50% creates visual competition with active elements; MD3 and Workday converged on 40% after user testing
+- Body text on dark backgrounds shouldn't be **pure white** — the halation effect makes it harder to read, not easier. Use `#E2E8F0` or `#F1F5F9`
+- Display type at 56px+ needs **negative letter spacing** (−0.03em) because optical counters open up at large sizes
+- Touch targets are **44×44px minimum** on mobile, period
 
-**4 design system presets** — Tailwind CSS, shadcn/ui, Material Design 3, Minimal/Neutral.
+These aren't opinions. They're the kind of thing a senior product designer knows from doing it wrong a few times. Without this knowledge, AI averages what it's seen on the internet and produces slop.
 
-**Onboarding flow** — one question, then Claude builds your first screen in Pencil in under 2 minutes. 8 tool calls max.
+pencil-pro embeds those values as lookup tables Claude checks before making any decision. It also gives Claude a structured workflow for working with `.pen` files: explore the canvas before touching it, inject your brand tokens at session start, find empty space before placing a new screen, use bulk replacement tools for token propagation instead of clicking through nodes one by one.
 
-**Perceptual Design Defaults** — science-backed lookup tables for typography, color contrast, spacing, motion, and icons. Built into `SKILL.md` so Claude uses them automatically.
-
-**Complete tool reference** for all 12 Pencil MCP tools — every parameter documented.
+The result: designs that are structurally sound and perceptually intentional — not averaged from what the internet thinks a dashboard should look like.
 
 ---
 
-## Prerequisites
+## Quick Start
 
-### 1. Pencil.dev
+**Before you begin:** make sure [Pencil.dev](https://pencil.dev) is installed and open, and you have [Claude Code](https://claude.ai/code) installed.
 
-Install the Pencil desktop app from **[pencil.dev](https://pencil.dev)**. The Pencil MCP server starts automatically when Pencil is running — there is no separate MCP install step.
-
-To verify it's working, open Claude Code and ask:
-```
-get_editor_state()
-```
-If you see a response about the active document (or "no document open"), you're connected.
-
-### 2. Claude Code
+**Step 1 — Install the skill** (pick one):
 
 ```bash
-npm install -g @anthropic-ai/claude-code
+# Global — available in every project
+git clone https://github.com/stevembarclay/pencil-pro ~/.claude/skills/pencil-pro
+
+# Per-project — only available in this repo
+git clone https://github.com/stevembarclay/pencil-pro .claude/skills/pencil-pro
 ```
 
----
-
-## Installation
-
-Clone into your project's `.claude/skills/` directory:
-
-```bash
-git clone https://github.com/YOUR_USERNAME/pencil-pro .claude/skills/pencil-pro
-```
-
-Or if you prefer copying files manually:
-
-```bash
-mkdir -p .claude/skills/pencil-pro/references .claude/skills/pencil-pro/presets
-# copy SKILL.md, setup.md, references/tool-reference.md, presets/*.json
-```
-
-The `.claude/skills/` directory is per-project. If you want `pencil-pro` available across all projects, use `~/.claude/skills/` instead.
-
----
-
-## Setup (required before first use)
-
-After installing, run the setup wizard to configure the skill for your design system:
+**Step 2 — Run setup** (once, takes ~30 seconds):
 
 ```
 In Claude Code, say: run the pencil-pro setup wizard
 ```
 
-The wizard will:
-1. Offer 4 preset design systems (30-second fast path)
-2. Or walk you through 6 questions for a custom configuration
-3. Show you a summary and ask for confirmation
-4. Write all values into `SKILL.md` — canvas resolution, sidebar width, token map, scaffold dimensions
+Pick a preset (Tailwind, shadcn/ui, Material, Minimal) and you're done. Setup writes your design system config into the skill so Claude uses it automatically.
 
-**You only need to run setup once.** Re-run it any time your design system changes.
+**Step 3 — Use it:**
+
+```
+Using pencil-pro, open my-design.pen and tell me what screens are in it.
+```
+
+That's it.
 
 ---
 
-## Usage
+## What It Does
 
-Once setup is complete, reference `pencil-pro` in your Claude Code prompts:
+Five workflows Claude follows automatically when you reference `pencil-pro`:
 
-```
-Using pencil-pro, open docs/mockups/dashboard-v1.pen and tell me what screens are in it.
-```
+| Workflow | When to use |
+|---|---|
+| **Canvas Archaeology** | "What's in this .pen file?" — explore before editing |
+| **Design Token Propagation** | A color or font changed — push it across the file |
+| **Canvas Spatial Management** | Adding a screen — find where to place it without overlap |
+| **Style Guide Pull** | Building a page type you haven't designed before |
+| **Bulk Property Inspection** | Audit for consistency before a token replacement |
 
-```
-Using pencil-pro, propagate the color-primary change from #2563EB to #1D4ED8 across docs/mockups/onboarding.pen.
-```
+Four scaffold archetypes — ready-to-run `batch_design` scripts for **Dashboard**, **List/Queue**, **Detail/Review**, and **Marketing Page** layouts.
 
-```
-Using pencil-pro, scaffold a new List screen for the user management page.
-```
+**Perceptual Design Defaults** — science-backed lookup tables for typography, color contrast, spacing, motion, and icons. Built into the skill so Claude applies them automatically.
 
-```
-Using pencil-pro, add a second screen to docs/mockups/settings-v1.pen showing the edit state.
-```
+**Complete tool reference** for all 12 Pencil MCP tools — every parameter documented.
 
 ---
 
@@ -122,39 +87,40 @@ Using pencil-pro, add a second screen to docs/mockups/settings-v1.pen showing th
 | **Material Design 3** | Purple (#6750A4) | Roboto / Roboto Mono | 1440×900 |
 | **Minimal / Neutral** | Near-black (#171717) | system-ui / ui-monospace | 1440×900 |
 
-All presets start at 1440×900 (laptop-first). You can override the canvas size during setup.
+Or answer 6 questions during setup to configure your own.
 
 ---
 
-## Scaffold Archetypes
+## Example Prompts
 
-| Scaffold | Layout type |
-|---|---|
-| **A — Dashboard** | Metrics, KPIs, activity feeds, monitoring |
-| **B — List / Queue** | Tables, asset libraries, queues, user lists |
-| **C — Detail / Review** | Two-panel detail views, review flows |
-| **D — Marketing Page** | Landing pages — 1440px regardless of app canvas |
+```
+Using pencil-pro, propagate the color-primary change from #2563EB to #1D4ED8 across onboarding.pen.
+```
+
+```
+Using pencil-pro, scaffold a new List screen for the user management page.
+```
+
+```
+Using pencil-pro, add a second screen to settings-v1.pen showing the edit state.
+```
 
 ---
 
-## How It Works
-
-Claude Code skills are Markdown files that load into Claude's context when invoked. `pencil-pro` is structured as:
+## File Structure
 
 ```
 .claude/skills/pencil-pro/
 ├── SKILL.md                   # Workflows, scaffolds, token map, session checklist
 ├── setup.md                   # Setup wizard — run once to configure
 ├── presets/
-│   ├── tailwind.json          # Tailwind CSS preset values
-│   ├── shadcn.json            # shadcn/ui preset values
-│   ├── material.json          # Material Design 3 preset values
-│   └── minimal.json           # Minimal/Neutral preset values
+│   ├── tailwind.json
+│   ├── shadcn.json
+│   ├── material.json
+│   └── minimal.json
 └── references/
     └── tool-reference.md      # Full parameter docs for all 12 Pencil MCP tools
 ```
-
-When you reference `pencil-pro` in a prompt, Claude loads `SKILL.md` and follows the workflows defined there. During setup, Claude reads `setup.md` and the relevant preset file, then edits `SKILL.md` with your actual values.
 
 ---
 
@@ -162,7 +128,7 @@ When you reference `pencil-pro` in a prompt, Claude loads `SKILL.md` and follows
 
 Issues and PRs welcome. Particularly useful contributions:
 
-- Additional preset design systems (Bootstrap, Ant Design, Chakra UI)
+- Additional presets (Bootstrap, Ant Design, Chakra UI)
 - Additional scaffold archetypes (modal, wizard/stepper, mobile screen)
 - Workflow additions (multi-file token sync, component extraction)
 - Tool reference updates when Pencil MCP adds new tools
