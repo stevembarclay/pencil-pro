@@ -1,10 +1,10 @@
-# pencil-pro
+# PencilPlaybook
 
 **Stop Claude from generating generic AI design slop in Pencil.dev.**
 
 Give it a real design education instead.
 
-pencil-pro embeds science-backed perceptual rules, structured workflows, and opinionated design systems directly into Claude Code. Claude stops averaging what it's seen on the internet and starts making defensible, specific design decisions.
+PencilPlaybook embeds science-backed perceptual rules, structured workflows, and opinionated design systems directly into Claude Code. Claude stops averaging what it's seen on the internet and starts making defensible, specific design decisions.
 
 No more 50% disabled states.
 No more pure-white text on dark backgrounds.
@@ -15,16 +15,16 @@ Just intentional, production-quality UI — built fast.
 
 ---
 
-<video src="https://github.com/stevembarclay/pencil-pro/releases/download/v1.1.0/demo.mp4" controls width="100%"></video>
+<video src="https://github.com/stevembarclay/pencilplaybook/releases/download/v1.1.0/demo.mp4" controls width="100%"></video>
 
 <!--
   Screenshots: add before/after comparison images here once available.
   Suggested format:
 
-  **Before** (raw Claude output) → **After** (with pencil-pro)
+  **Before** (raw Claude output) → **After** (with PencilPlaybook)
 
   ![Before: generic AI output](docs/images/before.png)
-  ![After: with pencil-pro](docs/images/after.png)
+  ![After: with PencilPlaybook](docs/images/after.png)
 -->
 
 ---
@@ -43,7 +43,7 @@ The problem isn't Claude — it's that good design has specific, defensible valu
 
 These aren't opinions. They're the kind of thing a senior product designer knows from doing it wrong a few times. Without this knowledge, AI averages what it's seen on the internet and produces slop.
 
-pencil-pro embeds those values as lookup tables Claude checks before making any decision. It also gives Claude a structured workflow for working with `.pen` files: explore the canvas before touching it, inject your brand tokens at session start, find empty space before placing a new screen, use bulk replacement tools for token propagation instead of clicking through nodes one by one.
+PencilPlaybook embeds those values as lookup tables Claude checks before making any decision. It also gives Claude a structured workflow for working with `.pen` files: explore the canvas before touching it, inject your brand tokens at session start, find empty space before placing a new screen, use bulk replacement tools for token propagation instead of clicking through nodes one by one.
 
 The result: designs that are structurally sound and perceptually intentional — not averaged from what the internet thinks a dashboard should look like.
 
@@ -57,16 +57,16 @@ The result: designs that are structurally sound and perceptually intentional —
 
 ```bash
 # Global — available in every project
-git clone https://github.com/stevembarclay/pencil-pro ~/.claude/skills/pencil-pro
+git clone https://github.com/stevembarclay/pencilplaybook ~/.claude/skills/PencilPlaybook
 
 # Per-project — only available in this repo
-git clone https://github.com/stevembarclay/pencil-pro .claude/skills/pencil-pro
+git clone https://github.com/stevembarclay/pencilplaybook .claude/skills/PencilPlaybook
 ```
 
 **Step 2 — Run setup** (once, takes ~30 seconds):
 
 ```
-In Claude Code, say: run the pencil-pro setup wizard
+In Claude Code, say: run the PencilPlaybook setup wizard
 ```
 
 Pick a preset (Midnight, Ember, Grove, Bloom, Volt — or Material/Minimal if you're already using a design system) and you're done. Setup writes your design system config into the skill so Claude uses it automatically.
@@ -74,7 +74,7 @@ Pick a preset (Midnight, Ember, Grove, Bloom, Volt — or Material/Minimal if yo
 **Step 3 — Use it:**
 
 ```
-Using pencil-pro, open my-design.pen and tell me what screens are in it.
+Using PencilPlaybook, open my-design.pen and tell me what screens are in it.
 ```
 
 That's it.
@@ -83,7 +83,7 @@ That's it.
 
 ## What It Does
 
-Five workflows Claude follows automatically when you reference `pencil-pro`:
+Five workflows Claude follows automatically when you reference `PencilPlaybook`:
 
 | Workflow | When to use |
 |---|---|
@@ -173,19 +173,19 @@ G — Mobile Screen          H — Form / Data Entry      I — Empty State
 ## Example Prompts
 
 ```
-Using pencil-pro, propagate the color-primary change from #2D6A4F to #1B5E42 across dashboard.pen.
+Using PencilPlaybook, propagate the color-primary change from #2D6A4F to #1B5E42 across dashboard.pen.
 ```
 
 ```
-Using pencil-pro, scaffold a new List screen for the user management page.
+Using PencilPlaybook, scaffold a new List screen for the user management page.
 ```
 
 ```
-Using pencil-pro, add a modal dialog to the existing invoice screen showing a delete confirmation.
+Using PencilPlaybook, add a modal dialog to the existing invoice screen showing a delete confirmation.
 ```
 
 ```
-Using pencil-pro, add a second screen to settings-v1.pen showing the edit state.
+Using PencilPlaybook, add a second screen to settings-v1.pen showing the edit state.
 ```
 
 ---
@@ -193,7 +193,7 @@ Using pencil-pro, add a second screen to settings-v1.pen showing the edit state.
 ## File Structure
 
 ```
-.claude/skills/pencil-pro/
+.claude/skills/pencilplaybook/
 ├── SKILL.md                   # Workflows, scaffolds, token map, session checklist
 ├── setup.md                   # Setup wizard — run once to configure
 ├── presets/

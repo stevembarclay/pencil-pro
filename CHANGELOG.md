@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to pencil-pro are documented here.
+All notable changes to PencilPlaybook are documented here.
 
 ---
 

@@ -270,7 +270,7 @@ Full example sessions for common tasks. These show how the tools combine in prac
 **Situation:** A `.pen` file exists that you haven't worked with. You need to add a new screen without breaking what's there.
 
 ```
-Using pencil-pro, open mockups/billing-v2.pen. Tell me what screens are
+Using PencilPlaybook, open mockups/billing-v2.pen. Tell me what screens are
 in it, their dimensions, and what tokens are in use. Then add a new screen
 showing the invoice detail view.
 ```
@@ -293,7 +293,7 @@ What Claude does:
 **Situation:** `color-primary` changed from `#2D6A4F` to `#1B5E42`. The change needs to ripple through an existing file.
 
 ```
-Using pencil-pro, propagate the color-primary change from #2D6A4F to
+Using PencilPlaybook, propagate the color-primary change from #2D6A4F to
 #1B5E42 across mockups/dashboard-v1.pen.
 ```
 
@@ -314,7 +314,7 @@ What Claude does:
 **Situation:** New `.pen` file, first screen. You want a populated dashboard, not just the empty structure.
 
 ```
-Using pencil-pro, create a new file at mockups/analytics-v1.pen and
+Using PencilPlaybook, create a new file at mockups/analytics-v1.pen and
 scaffold a dashboard for an analytics product. Include a stats bar with
 4 KPI cards, a line chart area, and a recent activity table.
 ```

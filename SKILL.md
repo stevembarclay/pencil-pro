@@ -1,5 +1,5 @@
 ---
-name: pencil-pro
+name: pencilplaybook
 description: "PencilPlaybook is the UI Skills / Taste-Skill for Pencil.dev + Claude Code — a design playbook that gives Claude real perceptual psychology and senior-level guardrails so it stops producing averaged-out AI slop."
 version: 1.1.0
 ---
@@ -10,11 +10,11 @@ version: 1.1.0
 
 **This skill must be configured before first use.**
 
-**If the user says "run the pencil-pro setup wizard" or asks to set up or configure pencil-pro:**
-→ Read `.claude/skills/pencil-pro/setup.md` and follow the instructions there exactly.
+**If the user says "run the PencilPlaybook setup wizard" or asks to set up or configure PencilPlaybook:**
+→ Read `.claude/skills/pencilplaybook/setup.md` and follow the instructions there exactly.
 
-**If the user says "build my first screen with pencil-pro" or asks to start designing:**
-→ Read `.claude/skills/pencil-pro/onboarding.md` and follow the instructions there exactly.
+**If the user says "build my first screen with PencilPlaybook" or asks to start designing:**
+→ Read `.claude/skills/pencilplaybook/onboarding.md` and follow the instructions there exactly.
 
 > Configured resolution: *(run setup to set this)*
 
@@ -426,7 +426,7 @@ Quick-lookup tables for building components in Pencil. Science-backed defaults �
 
 | Mistake | Fix |
 |---|---|
-| Unconfigured SKILL.md | Run `run the pencil-pro setup wizard` before first use |
+| Unconfigured SKILL.md | Run `run the PencilPlaybook setup wizard` before first use |
 | Building at the wrong resolution | Check `snapshot_layout()` after every scaffold |
 | Hardcoded hex values instead of tokens | `set_variables` first, every session |
 | All screens in one giant frame | Separate frames per screen. `find_empty_space_on_canvas` for placement |
@@ -447,7 +447,7 @@ If a design decision doesn't match your configured token map (wrong color, arbit
 2. Run `get_variables()` to confirm tokens are actually set — if the map is empty, `set_variables` was skipped. Re-run the session startup sequence.
 3. Run `search_all_unique_properties(parentIds=["root"], propertyNames=["bg","color"])` to surface any hardcoded values that snuck in, then bulk-replace them.
 
-If Claude continues inventing values: stop, re-read SKILL.md aloud in the prompt — *"Using pencil-pro, [instruction]"* — to re-anchor to the skill context.
+If Claude continues inventing values: stop, re-read SKILL.md aloud in the prompt — *"Using PencilPlaybook, [instruction]"* — to re-anchor to the skill context.
 
 ---
 

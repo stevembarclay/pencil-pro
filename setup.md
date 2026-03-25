@@ -1,20 +1,20 @@
 # Pencil Pro — Setup Wizard
 
-This file configures `pencil-pro` for your project. Run it once after installing.
+This file configures `PencilPlaybook` for your project. Run it once after installing.
 
-**How to invoke:** In Claude Code, say: `run the pencil-pro setup wizard`
+**How to invoke:** In Claude Code, say: `run the PencilPlaybook setup wizard`
 
 ---
 
 ## Instructions for Claude
 
-You are running the pencil-pro setup wizard. Follow these steps in order.
+You are running the PencilPlaybook setup wizard. Follow these steps in order.
 
 ### Step 1 — Ask the user to pick a path
 
 Present this choice:
 
-> **How would you like to configure pencil-pro?**
+> **How would you like to configure PencilPlaybook?**
 >
 > 1. **Preset** — pick from 7 opinionated design systems. Takes 30 seconds.
 > 2. **Custom** — answer 6 questions about your own design system.
@@ -175,7 +175,7 @@ Note on `sidebarBg`: For light-background apps, the sidebar is usually a dark co
 
 Before writing anything, show a summary:
 
-> **Here's your pencil-pro configuration:**
+> **Here's your PencilPlaybook configuration:**
 >
 > Canvas: [canvasWidth] × [canvasHeight]
 > Sidebar: [sidebarWidth]px → [pageAreaWidth]px page area
@@ -239,7 +239,7 @@ Find the "Configure your primary canvas resolution" note and add a line confirmi
 
 Tell the user:
 
-> **pencil-pro is configured.** Your SKILL.md now has real values for all scaffolds and token maps.
+> **PencilPlaybook is configured.** Your SKILL.md now has real values for all scaffolds and token maps.
 >
 > Want to build your first screen right now? I'll open Pencil, scaffold a layout, and show you a screenshot — takes about 60 seconds.
 >
@@ -248,8 +248,8 @@ Tell the user:
 If they say yes: read `onboarding.md` and follow it from Step 1.
 
 If they say no:
-> To start designing, say: `build my first screen with pencil-pro`
-> To reconfigure at any time, say: `run the pencil-pro setup wizard`
+> To start designing, say: `build my first screen with PencilPlaybook`
+> To reconfigure at any time, say: `run the PencilPlaybook setup wizard`
 
 ---
 

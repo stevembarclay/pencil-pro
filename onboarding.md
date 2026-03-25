@@ -1,6 +1,6 @@
-# Pencil Pro — First Screen
+# PencilPlaybook — First Screen
 
-Walk a new user to a real screen on canvas in under 2 minutes. Runs after setup, or any time via: `build my first screen with pencil-pro`
+Walk a new user to a real screen on canvas in under 2 minutes. Runs after setup, or any time via: `build my first screen with PencilPlaybook`
 
 ---
 
