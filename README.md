@@ -1,17 +1,17 @@
 # PencilPlaybook
 
-**Stop Claude from generating generic AI design slop in Pencil.dev.**
+**Install once. Claude now knows why disabled buttons are 40% opacity, not 50%.**
 
-Give it a real design education instead.
+That specificity — defensible, tested, perceptually grounded — is what separates production UI from AI slop. PencilPlaybook embeds those rules directly into Claude Code, so every Pencil.dev session automatically gets the values a senior designer carries in their head.
 
-PencilPlaybook embeds science-backed perceptual rules, structured workflows, and opinionated design systems directly into Claude Code. Claude stops averaging what it's seen on the internet and starts making defensible, specific design decisions.
+Now Claude knows:
+- Disabled at **40%, not 50%** — MD3 and Workday both converged here after user testing; 50% creates visual competition with active elements
+- Hover states need an **8% lightness delta** minimum — below that, the state is imperceptible on most monitors
+- Body text on dark backgrounds: not pure white — halation makes it harder to read; use `#E2E8F0` or `#F1F5F9`
+- Display type at 56px+: **−0.03em letter spacing** — optical counters open up at large sizes
+- Touch targets: **44×44px minimum** on mobile, period
 
-No more 50% disabled states.
-No more pure-white text on dark backgrounds.
-No more arbitrary colors invented from thin air.
-No more editing a file without checking what's already in it.
-
-Just intentional, production-quality UI — built fast.
+Nine scaffold archetypes. Seven preset design systems. Structured workflows for every Pencil.dev operation. One `git clone`.
 
 ---
 
@@ -29,21 +29,13 @@ Just intentional, production-quality UI — built fast.
 
 ---
 
-## Why this exists
+## The rules Claude doesn't ship with
 
-When you ask Claude to design something in Pencil without any guidance, it fumbles. It invents colors, picks arbitrary font sizes, sets disabled buttons to 50% opacity because that "feels right," and edits directly into whatever file is open without checking what's already there. The output looks like a Figma template someone downloaded in 2019.
+The problem isn't Claude's capability — it's that good design has specific, defensible values that AI doesn't know unless you tell it. Without them, it averages what it's seen on the internet.
 
-The problem isn't Claude — it's that good design has specific, defensible values that Claude doesn't know unless you tell it:
+These aren't opinions. They're the kind of thing a senior product designer learns from doing it wrong a few times. Hover states that don't clear the 8% lightness threshold are invisible on most monitors. Disabled elements at 50% opacity compete visually with active ones. Pure white on dark backgrounds causes halation. These are measurable, testable, reproducible failures — and they're exactly what raw Claude output defaults to.
 
-- Hover states need at least an **8% lightness delta** or they're imperceptible on most monitors
-- Disabled elements at **40% opacity** (not 50%) — 50% creates visual competition with active elements; MD3 and Workday converged on 40% after user testing
-- Body text on dark backgrounds shouldn't be **pure white** — the halation effect makes it harder to read, not easier. Use `#E2E8F0` or `#F1F5F9`
-- Display type at 56px+ needs **negative letter spacing** (−0.03em) because optical counters open up at large sizes
-- Touch targets are **44×44px minimum** on mobile, period
-
-These aren't opinions. They're the kind of thing a senior product designer knows from doing it wrong a few times. Without this knowledge, AI averages what it's seen on the internet and produces slop.
-
-PencilPlaybook embeds those values as lookup tables Claude checks before making any decision. It also gives Claude a structured workflow for working with `.pen` files: explore the canvas before touching it, inject your brand tokens at session start, find empty space before placing a new screen, use bulk replacement tools for token propagation instead of clicking through nodes one by one.
+PencilPlaybook embeds those values as lookup tables Claude checks before making any decision. It also gives Claude a structured workflow for `.pen` files: explore the canvas before touching it, inject brand tokens at session start, find empty space before placing a new screen, use bulk replacement tools for token propagation instead of clicking through nodes one by one.
 
 The result: designs that are structurally sound and perceptually intentional — not averaged from what the internet thinks a dashboard should look like.
 
