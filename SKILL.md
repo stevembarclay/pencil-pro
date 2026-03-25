@@ -323,6 +323,24 @@ Use to find hardcoded hex values that should be tokens, rogue font sizes, or spa
 
 ---
 
+### Workflow 6: Version Snapshot (Protect Your Work)
+
+Use when: before any major redesign, refactor, or when switching between files.
+
+**Prompt template:**
+```
+Using PencilPlaybook, create a version snapshot comment at the top of the
+current canvas. Include: current date/time, list of all screens, active
+design tokens summary, and a short note of what is about to change.
+```
+
+This acts as a lightweight undo checkpoint and helps maintain consistency across multiple .pen files. Run it before:
+- Token propagation across a large file
+- A structural refactor (changing layout, splitting panels)
+- Handing off to another session or collaborator
+
+---
+
 ## Tool Reference
 
 Quick lookup — full parameter docs in `references/tool-reference.md`.

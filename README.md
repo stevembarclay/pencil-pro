@@ -49,6 +49,41 @@ The result: designs that are structurally sound and perceptually intentional —
 
 ---
 
+## Save Tokens & Go Faster
+
+PencilPlaybook is built to reduce token waste and speed up your loops:
+
+- Always start with **Canvas Archaeology**:
+  `Using PencilPlaybook, analyze this canvas and list every screen + current design tokens.`
+
+- Use scoped prompts for small changes:
+  `Using PencilPlaybook, only update the modal on screen "checkout" with better hierarchy. Do not touch other screens.`
+
+- Run **Bulk Property Inspection** first before big refactors.
+
+- Stick to one of the 7 presets unless you have a very specific need.
+
+Pro tip: Keep individual .pen files under ~15–20 screens. Use spatial management workflows when splitting large projects.
+
+---
+
+## Common Pitfalls & Fixes
+
+- **MCP keeps disappearing or re-injecting**
+  Run the setup wizard once, then pin the skill. Work primarily inside the IDE and avoid opening the Pencil desktop app while Claude Code is active — the app can override MCP configs.
+
+- **Fear of losing work**
+  Before any major change, prompt:
+  `Using PencilPlaybook, create a version snapshot comment at the top of the canvas with current token values and screen list.`
+
+- **Claude still suggests bad defaults**
+  Always prefix prompts with `Using PencilPlaybook,`
+
+- **Token spikes on large canvases**
+  Use Canvas Archaeology + Bulk Inspection first.
+
+---
+
 ## Quick Start
 
 **Before you begin:** make sure [Pencil.dev](https://pencil.dev) is installed and open, and you have [Claude Code](https://claude.ai/code) installed.
