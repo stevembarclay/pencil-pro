@@ -1,6 +1,6 @@
 ---
 name: pencil-pro
-description: "Advanced Pencil.dev workflows for Claude Code. Covers: design token propagation across .pen files, canvas archaeology (batch_get), bulk property replacement, canvas spatial management, and all 12 Pencil MCP tools. Use when: updating existing .pen files, propagating a token change, understanding what's in a .pen file, managing multi-file design system consistency, or scaffolding new app or marketing screens."
+description: "Stop Claude from generating generic AI design slop in Pencil.dev. Embeds science-backed perceptual defaults, 9 scaffold archetypes, and opinionated design systems into Claude Code. Use when: designing in Pencil.dev, propagating a token change, understanding what's in a .pen file, or scaffolding any common app layout."
 version: 1.1.0
 ---
 

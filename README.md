@@ -1,8 +1,31 @@
 # pencil-pro
 
-> Structured Pencil.dev workflows for Claude Code. Gives Claude a design playbook and science-backed defaults so it stops guessing and starts building intentionally.
+**Stop Claude from generating generic AI design slop in Pencil.dev.**
+
+Give it a real design education instead.
+
+pencil-pro embeds science-backed perceptual rules, structured workflows, and opinionated design systems directly into Claude Code. Claude stops averaging what it's seen on the internet and starts making defensible, specific design decisions.
+
+No more 50% disabled states.
+No more pure-white text on dark backgrounds.
+No more arbitrary colors invented from thin air.
+No more editing a file without checking what's already in it.
+
+Just intentional, production-quality UI — built fast.
+
+---
 
 <video src="https://github.com/stevembarclay/pencil-pro/releases/download/v1.1.0/demo.mp4" controls width="100%"></video>
+
+<!--
+  Screenshots: add before/after comparison images here once available.
+  Suggested format:
+
+  **Before** (raw Claude output) → **After** (with pencil-pro)
+
+  ![Before: generic AI output](docs/images/before.png)
+  ![After: with pencil-pro](docs/images/after.png)
+-->
 
 ---
 
