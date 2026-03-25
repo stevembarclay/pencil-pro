@@ -77,6 +77,9 @@ Also pre-compute content heights for each scaffold (used in Step 4b):
 - `contentHeightA = canvasHeight - 144` (Scaffold A: 64px header + 80px stats bar)
 - `contentHeightB = canvasHeight - 116` (Scaffold B: 64px header + 52px command strip)
 - `contentHeightC = canvasHeight - 120` (Scaffold C: 64px header + 56px action bar)
+- `contentHeightF = canvasHeight - 196` (Scaffold F: 64px header + 60px stepper + 72px footer)
+- `wizardFooterY = canvasHeight - 72` (Scaffold F: footer pinned to bottom)
+- `contentHeightH = canvasHeight - 64` (Scaffolds H and I: header only)
 
 **Question 3 — Primary / brand color**
 > What is your primary brand color? (hex value, e.g. #2563EB)
@@ -220,6 +223,9 @@ Use this mapping to replace every occurrence in the scaffold scripts:
 | `SCAFFOLD_CONTENT_HEIGHT_A` | contentHeightA (number) |
 | `SCAFFOLD_CONTENT_HEIGHT_B` | contentHeightB (number) |
 | `SCAFFOLD_CONTENT_HEIGHT_C` | contentHeightC (number) |
+| `SCAFFOLD_CONTENT_HEIGHT_F` | contentHeightF (number) |
+| `SCAFFOLD_WIZARD_FOOTER_Y` | wizardFooterY (number) |
+| `SCAFFOLD_CONTENT_HEIGHT_H` | contentHeightH (number) |
 | `SCAFFOLD_LEFT_PANEL` | leftPanelWidth (number) |
 | `SCAFFOLD_RIGHT_PANEL` | rightPanelWidth (number) |
 

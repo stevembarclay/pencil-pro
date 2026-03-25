@@ -256,3 +256,79 @@ export_nodes(
 ```
 
 The folder will be created if it doesn't exist.
+
+---
+
+## Prompt Recipes
+
+Full example sessions for common tasks. These show how the tools combine in practice.
+
+---
+
+### Recipe 1: Explore an unfamiliar file, then add a screen
+
+**Situation:** A `.pen` file exists that you haven't worked with. You need to add a new screen without breaking what's there.
+
+```
+Using pencil-pro, open mockups/billing-v2.pen. Tell me what screens are
+in it, their dimensions, and what tokens are in use. Then add a new screen
+showing the invoice detail view.
+```
+
+What Claude does:
+1. `open_document("mockups/billing-v2.pen")`
+2. `get_editor_state()` — confirms active file and root node
+3. `batch_get(patterns=["*"])` — reads full node tree
+4. `snapshot_layout()` — checks computed dimensions
+5. `search_all_unique_properties(parentIds=["root"], propertyNames=["bg","color","fontFamily"])` — audits tokens in use
+6. Reports findings to you
+7. `find_empty_space_on_canvas(direction="right", ...)` — finds placement for new screen
+8. Runs Scaffold C (or whichever fits), placed at the found coordinates
+9. `get_screenshot(nodeId="[new-screen-id]")` — shows you the result
+
+---
+
+### Recipe 2: Propagate a brand color change across a file
+
+**Situation:** `color-primary` changed from `#2D6A4F` to `#1B5E42`. The change needs to ripple through an existing file.
+
+```
+Using pencil-pro, propagate the color-primary change from #2D6A4F to
+#1B5E42 across mockups/dashboard-v1.pen.
+```
+
+What Claude does:
+1. `open_document("mockups/dashboard-v1.pen")`
+2. `set_variables({"color-primary": "#1B5E42", ...})` — updates token map
+3. `search_all_unique_properties(parentIds=["root"], propertyNames=["bg","color","borderColor"])` — finds all instances of the old value
+4. For each property type that has `#2D6A4F`: runs `replace_all_matching_properties(...)`
+5. `get_screenshot(nodeId="[root]")` — visual verification
+6. Reports what was changed and what wasn't (e.g. hardcoded values that didn't match the token)
+
+**Key insight:** This catches hardcoded hex values that were never tokenized. Any values that don't get replaced are tech debt — they should be refactored to use the token.
+
+---
+
+### Recipe 3: Scaffold a dashboard from scratch
+
+**Situation:** New `.pen` file, first screen. You want a populated dashboard, not just the empty structure.
+
+```
+Using pencil-pro, create a new file at mockups/analytics-v1.pen and
+scaffold a dashboard for an analytics product. Include a stats bar with
+4 KPI cards, a line chart area, and a recent activity table.
+```
+
+What Claude does:
+1. `open_document("mockups/analytics-v1.pen")` — creates new file
+2. `get_guidelines(topic="web-app")` — loads design rules
+3. `set_variables({...})` — injects brand tokens from SKILL.md
+4. `get_variables()` — confirms tokens stored
+5. `snapshot_layout()` — verifies clean canvas
+6. Runs Scaffold A (Dashboard) via `batch_design` — sidebar, page area, stats bar, content wrap
+7. `snapshot_layout()` — verifies all dimensions resolved before adding content
+8. Second `batch_design` call — adds 4 KPI card frames in the stats bar
+9. Third `batch_design` call — adds chart area and table in the content area
+10. `get_screenshot(nodeId="[pageArea-id]")` — shows result
+
+**The split across multiple `batch_design` calls is intentional.** Verify layout is correct after the scaffold before adding content nodes on top of it.

@@ -46,7 +46,7 @@ git clone https://github.com/stevembarclay/pencil-pro .claude/skills/pencil-pro
 In Claude Code, say: run the pencil-pro setup wizard
 ```
 
-Pick a preset (Tailwind, shadcn/ui, Material, Minimal) and you're done. Setup writes your design system config into the skill so Claude uses it automatically.
+Pick a preset (Midnight, Ember, Grove, Bloom, Volt — or Material/Minimal if you're already using a design system) and you're done. Setup writes your design system config into the skill so Claude uses it automatically.
 
 **Step 3 — Use it:**
 
@@ -70,7 +70,7 @@ Five workflows Claude follows automatically when you reference `pencil-pro`:
 | **Style Guide Pull** | Building a page type you haven't designed before |
 | **Bulk Property Inspection** | Audit for consistency before a token replacement |
 
-Four scaffold archetypes — ready-to-run `batch_design` scripts for **Dashboard**, **List/Queue**, **Detail/Review**, and **Marketing Page** layouts.
+Nine scaffold archetypes — ready-to-run `batch_design` scripts for every common layout: **Dashboard**, **List/Queue**, **Detail/Review**, **Marketing Page**, **Modal/Dialog**, **Wizard/Stepper**, **Mobile Screen**, **Form/Data Entry**, and **Empty State**.
 
 **Perceptual Design Defaults** — science-backed lookup tables for typography, color contrast, spacing, motion, and icons. Built into the skill so Claude applies them automatically.
 
@@ -101,14 +101,64 @@ Or answer 6 questions during setup to configure your own.
 
 ---
 
+## Scaffold Archetypes
+
+What each scaffold produces — run the setup wizard first to fill in your colors and dimensions.
+
+```
+A — Dashboard              B — List / Queue           C — Detail / Review
+┌───────┬────────────────┐  ┌───────┬────────────────┐  ┌───────┬────────────────┐
+│       │ PageHeader     │  │       │ PageHeader     │  │       │ PageHeader     │
+│Sidebar│────────────────│  │Sidebar│────────────────│  │Sidebar│────────────────│
+│       │ Stats KPIs     │  │       │ Search │Filter │  │       │ ActionBar      │
+│       │────────────────│  │       │────────────────│  │       │────────────────│
+│       │                │  │       │ Col Col Col Col│  │       │ Left  │ Right  │
+│       │  ContentInner  │  │       │ ─────────────  │  │       │ Panel │ Panel  │
+│       │                │  │       │ row · row · row│  │       │ (40%) │ (60%)  │
+└───────┴────────────────┘  └───────┴────────────────┘  └───────┴────────────────┘
+
+D — Marketing Page         E — Modal / Dialog         F — Wizard / Stepper
+┌────────────────────────┐  ┌───────┬────────────────┐  ┌───────┬────────────────┐
+│ Navbar                 │  │       │ PageHeader     │  │       │ PageHeader     │
+├────────────────────────┤  │Sidebar│ ─ ─ ─ ─ ─ ─ ─ │  │Sidebar│────────────────│
+│                        │  │(dim)  │  ┌──────────┐  │  │       │ ①──②──③──④    │
+│     HeroSection        │  │       │  │ Header   │  │  │       │────────────────│
+│                        │  │       │  │ Body     │  │  │       │                │
+├────────────────────────┤  │       │  │[×][Save] │  │  │       │ ContentInner   │
+│                        │  │       │  └──────────┘  │  │       │   (640px)      │
+│     Section 1          │  │       │                │  │       │────────────────│
+│                        │  └───────┴────────────────┘  │       │[← Back][Next →]│
+└────────────────────────┘                               └───────┴────────────────┘
+
+G — Mobile Screen          H — Form / Data Entry      I — Empty State
+┌──────────────┐            ┌───────┬────────────────┐  ┌───────┬────────────────┐
+│  StatusBar   │            │       │ PageHeader     │  │       │ PageHeader     │
+├──────────────┤            │Sidebar│────────────────│  │Sidebar│────────────────│
+│  NavBar      │            │       │ ┌────────────┐ │  │       │                │
+├──────────────┤            │       │ │ FormSection│ │  │       │   ┌────────┐   │
+│              │            │       │ │ [_________]│ │  │       │   │ illus. │   │
+│ ScrollContent│            │       │ │ [_________]│ │  │       │   └────────┘   │
+│              │            │       │ └────────────┘ │  │       │  "Nothing yet" │
+├──────────────┤            │       │  [Cancel][Save]│  │       │  [+ Create one]│
+│  BottomNav   │            └───────┴────────────────┘  └───────┴────────────────┘
+└──────────────┘
+   390 × 844
+```
+
+---
+
 ## Example Prompts
 
 ```
-Using pencil-pro, propagate the color-primary change from #2563EB to #1D4ED8 across onboarding.pen.
+Using pencil-pro, propagate the color-primary change from #2D6A4F to #1B5E42 across dashboard.pen.
 ```
 
 ```
 Using pencil-pro, scaffold a new List screen for the user management page.
+```
+
+```
+Using pencil-pro, add a modal dialog to the existing invoice screen showing a delete confirmation.
 ```
 
 ```
@@ -124,12 +174,15 @@ Using pencil-pro, add a second screen to settings-v1.pen showing the edit state.
 ├── SKILL.md                   # Workflows, scaffolds, token map, session checklist
 ├── setup.md                   # Setup wizard — run once to configure
 ├── presets/
-│   ├── tailwind.json
-│   ├── shadcn.json
-│   ├── material.json
-│   └── minimal.json
+│   ├── midnight.json          # Full dark — electric blue, Inter
+│   ├── ember.json             # Terminal dark — amber, JetBrains Mono
+│   ├── grove.json             # Earthy light — forest green, DM Sans
+│   ├── bloom.json             # Playful light — rose, Plus Jakarta Sans
+│   ├── volt.json              # Neobrutalist — black borders, yellow accent
+│   ├── material.json          # MD3 baseline
+│   └── minimal.json           # Grayscale blank slate
 └── references/
-    └── tool-reference.md      # Full parameter docs for all 12 Pencil MCP tools
+    └── tool-reference.md      # Full parameter docs + prompt recipes
 ```
 
 ---
@@ -138,10 +191,10 @@ Using pencil-pro, add a second screen to settings-v1.pen showing the edit state.
 
 Issues and PRs welcome. Particularly useful contributions:
 
-- Additional presets (Bootstrap, Ant Design, Chakra UI)
-- Additional scaffold archetypes (modal, wizard/stepper, mobile screen)
+- Additional presets — new personality-driven design systems (not framework defaults)
 - Workflow additions (multi-file token sync, component extraction)
 - Tool reference updates when Pencil MCP adds new tools
+- Screenshots or recordings showing scaffold output before/after
 
 ---
 
