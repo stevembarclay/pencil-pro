@@ -1,0 +1,50 @@
+{
+  "name": "Ember",
+  "description": "Near-black with amber accent. JetBrains Mono as the primary font — intentional. Tight spacing. For dev tools, CLIs, and technical products.",
+
+  "canvas": {
+    "width": 1440,
+    "height": 900,
+    "marketingWidth": 1440
+  },
+
+  "tokens": {
+    "color-primary":        "#F59E0B",
+    "color-primary-dark":   "#D97706",
+    "color-accent":         "#FCD34D",
+    "color-background":     "#0C0C0C",
+    "color-surface":        "#141414",
+    "color-border":         "#262626",
+    "color-text":           "#E5E5E5",
+    "color-text-muted":     "#737373",
+    "color-success":        "#86EFAC",
+    "color-warning":        "#F59E0B",
+    "color-error":          "#F87171",
+    "font-sans":            "JetBrains Mono",
+    "font-mono":            "JetBrains Mono",
+    "font-serif":           "Georgia",
+    "spacing-card":         "20",
+    "spacing-gap-sm":       "6",
+    "spacing-gap-md":       "12",
+    "spacing-gap-lg":       "20",
+    "spacing-gap-xl":       "28",
+    "content-max-width":    "1024",
+    "sidebar-width":        "220"
+  },
+
+  "scaffold": {
+    "sidebarWidth":         220,
+    "pageAreaWidth":        1220,
+    "contentMax":           1024,
+    "marketingContentMax":  720,
+    "sidebarBg":            "#080808",
+    "pageBg":               "#0C0C0C",
+    "surface":              "#141414",
+    "border":               "#262626",
+    "statsBg":              "#1F1500",
+    "tableHeaderBg":        "#1A1A1A",
+    "heroBg":               "#080808",
+    "leftPanelWidth":       410,
+    "rightPanelWidth":      614
+  }
+}

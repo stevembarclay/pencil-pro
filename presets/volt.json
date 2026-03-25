@@ -1,0 +1,50 @@
+{
+  "name": "Volt",
+  "description": "Neobrutalist. White surfaces, near-black primary, electric yellow accent, black borders, Space Grotesk. For brands that don't want to look like enterprise SaaS.",
+
+  "canvas": {
+    "width": 1440,
+    "height": 900,
+    "marketingWidth": 1440
+  },
+
+  "tokens": {
+    "color-primary":        "#18181B",
+    "color-primary-dark":   "#000000",
+    "color-accent":         "#FACC15",
+    "color-background":     "#FFFFFF",
+    "color-surface":        "#F7F7F7",
+    "color-border":         "#18181B",
+    "color-text":           "#18181B",
+    "color-text-muted":     "#52525B",
+    "color-success":        "#15803D",
+    "color-warning":        "#A16207",
+    "color-error":          "#B91C1C",
+    "font-sans":            "Space Grotesk",
+    "font-mono":            "JetBrains Mono",
+    "font-serif":           "Georgia",
+    "spacing-card":         "24",
+    "spacing-gap-sm":       "8",
+    "spacing-gap-md":       "16",
+    "spacing-gap-lg":       "24",
+    "spacing-gap-xl":       "32",
+    "content-max-width":    "1088",
+    "sidebar-width":        "240"
+  },
+
+  "scaffold": {
+    "sidebarWidth":         240,
+    "pageAreaWidth":        1200,
+    "contentMax":           1088,
+    "marketingContentMax":  768,
+    "sidebarBg":            "#000000",
+    "pageBg":               "#FFFFFF",
+    "surface":              "#F7F7F7",
+    "border":               "#18181B",
+    "statsBg":              "#FACC15",
+    "tableHeaderBg":        "#F7F7F7",
+    "heroBg":               "#000000",
+    "leftPanelWidth":       435,
+    "rightPanelWidth":      653
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Midnight",
+  "description": "Full dark-mode SaaS. Near-black surfaces, electric blue primary, off-white text. Raycast / Vercel / Linear dark aesthetic.",
+
+  "canvas": {
+    "width": 1440,
+    "height": 900,
+    "marketingWidth": 1440
+  },
+
+  "tokens": {
+    "color-primary":        "#58A6FF",
+    "color-primary-dark":   "#1F6FEB",
+    "color-accent":         "#818CF8",
+    "color-background":     "#0D1117",
+    "color-surface":        "#161B22",
+    "color-border":         "#30363D",
+    "color-text":           "#E6EDF3",
+    "color-text-muted":     "#7D8590",
+    "color-success":        "#3FB950",
+    "color-warning":        "#D29922",
+    "color-error":          "#F85149",
+    "font-sans":            "Inter",
+    "font-mono":            "JetBrains Mono",
+    "font-serif":           "Georgia",
+    "spacing-card":         "24",
+    "spacing-gap-sm":       "8",
+    "spacing-gap-md":       "16",
+    "spacing-gap-lg":       "24",
+    "spacing-gap-xl":       "32",
+    "content-max-width":    "1088",
+    "sidebar-width":        "240"
+  },
+
+  "scaffold": {
+    "sidebarWidth":         240,
+    "pageAreaWidth":        1200,
+    "contentMax":           1088,
+    "marketingContentMax":  760,
+    "sidebarBg":            "#010409",
+    "pageBg":               "#0D1117",
+    "surface":              "#161B22",
+    "border":               "#30363D",
+    "statsBg":              "#161B22",
+    "tableHeaderBg":        "#1C2128",
+    "heroBg":               "#010409",
+    "leftPanelWidth":       435,
+    "rightPanelWidth":      653
+  }
+}

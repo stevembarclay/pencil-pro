@@ -16,7 +16,7 @@ Present this choice:
 
 > **How would you like to configure pencil-pro?**
 >
-> 1. **Preset** — pick a ready-made design system (Tailwind CSS, shadcn/ui, Material Design 3, or Minimal/Neutral). Takes 30 seconds.
+> 1. **Preset** — pick from 7 opinionated design systems. Takes 30 seconds.
 > 2. **Custom** — answer 6 questions about your own design system.
 
 ---
@@ -27,16 +27,22 @@ If the user picks preset, show these options:
 
 | # | Preset | Description |
 |---|---|---|
-| 1 | **Tailwind CSS** | Blue primary, slate sidebar, gray neutrals, Inter font |
-| 2 | **shadcn/ui** | Zinc monochrome, near-black primary, Geist font |
-| 3 | **Material Design 3** | Purple primary, MD3 tonal surfaces, Roboto font |
-| 4 | **Minimal / Neutral** | Pure grayscale, system fonts, no brand color |
+| 1 | **Midnight** | Full dark mode — near-black surfaces, electric blue, Inter |
+| 2 | **Ember** | Terminal dark — amber accent, JetBrains Mono as primary font, tight spacing |
+| 3 | **Grove** | Earthy light — forest green, warm off-white, DM Sans, generous spacing |
+| 4 | **Bloom** | Playful — warm rose, white surfaces, Plus Jakarta Sans |
+| 5 | **Volt** | Neobrutalist — black borders, electric yellow accent, Space Grotesk |
+| 6 | **Material Design 3** | MD3 baseline — purple, tonal surfaces, Roboto *(good if you're already using MD3)* |
+| 7 | **Minimal / Neutral** | Grayscale, system fonts *(good if you're bringing your own design system)* |
 
 Once the user picks one, read the corresponding file from `presets/`:
-- Option 1 → `presets/tailwind.json`
-- Option 2 → `presets/shadcn.json`
-- Option 3 → `presets/material.json`
-- Option 4 → `presets/minimal.json`
+- Option 1 → `presets/midnight.json`
+- Option 2 → `presets/ember.json`
+- Option 3 → `presets/grove.json`
+- Option 4 → `presets/bloom.json`
+- Option 5 → `presets/volt.json`
+- Option 6 → `presets/material.json`
+- Option 7 → `presets/minimal.json`
 
 Load the `tokens` object as your **token map** and the `scaffold` object as your **scaffold values**. Also note the `canvas` values. Skip to Step 3.
 

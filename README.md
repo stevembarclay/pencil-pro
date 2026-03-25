@@ -80,12 +80,22 @@ Four scaffold archetypes — ready-to-run `batch_design` scripts for **Dashboard
 
 ## Preset Design Systems
 
-| Preset | Primary | Fonts | Canvas |
+Five opinionated presets with distinct aesthetics, plus two baseline options if you're already working with an existing system:
+
+| Preset | Primary | Fonts | Spacing | Dark? |
+|---|---|---|---|---|
+| **Midnight** | Electric blue (#58A6FF) | Inter / JetBrains Mono | Standard | Yes — full dark |
+| **Ember** | Amber (#F59E0B) | JetBrains Mono / JetBrains Mono | Tight (6/12/20) | Yes — near-black |
+| **Grove** | Forest green (#2D6A4F) | DM Sans / JetBrains Mono | Generous (12/20/32/48) | No — warm off-white |
+| **Bloom** | Rose (#F43F5E) | Plus Jakarta Sans / JetBrains Mono | Standard | No — white |
+| **Volt** | Near-black + yellow (#FACC15) | Space Grotesk / JetBrains Mono | Standard | No — white, black borders |
+
+**Already have a design system?**
+
+| Preset | Primary | Fonts | |
 |---|---|---|---|
-| **Tailwind CSS** | Blue (#2563EB) | Inter / JetBrains Mono | 1440×900 |
-| **shadcn/ui** | Zinc near-black (#18181B) | Geist Sans / Geist Mono | 1440×900 |
-| **Material Design 3** | Purple (#6750A4) | Roboto / Roboto Mono | 1440×900 |
-| **Minimal / Neutral** | Near-black (#171717) | system-ui / ui-monospace | 1440×900 |
+| **Material Design 3** | Purple (#6750A4) | Roboto / Roboto Mono | MD3 baseline |
+| **Minimal / Neutral** | Near-black (#171717) | system-ui / ui-monospace | Blank slate |
 
 Or answer 6 questions during setup to configure your own.
 

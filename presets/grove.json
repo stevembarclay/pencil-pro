@@ -1,0 +1,50 @@
+{
+  "name": "Grove",
+  "description": "Warm off-white surfaces, forest green primary, stone neutrals, DM Sans, generous spacing. For productivity tools, writing apps, and calm software.",
+
+  "canvas": {
+    "width": 1440,
+    "height": 900,
+    "marketingWidth": 1440
+  },
+
+  "tokens": {
+    "color-primary":        "#2D6A4F",
+    "color-primary-dark":   "#1B4332",
+    "color-accent":         "#52796F",
+    "color-background":     "#F7F5F0",
+    "color-surface":        "#FFFFFF",
+    "color-border":         "#D6D3CD",
+    "color-text":           "#1C1917",
+    "color-text-muted":     "#78716C",
+    "color-success":        "#2D6A4F",
+    "color-warning":        "#92400E",
+    "color-error":          "#9F1239",
+    "font-sans":            "DM Sans",
+    "font-mono":            "JetBrains Mono",
+    "font-serif":           "Georgia",
+    "spacing-card":         "32",
+    "spacing-gap-sm":       "12",
+    "spacing-gap-md":       "20",
+    "spacing-gap-lg":       "32",
+    "spacing-gap-xl":       "48",
+    "content-max-width":    "880",
+    "sidebar-width":        "260"
+  },
+
+  "scaffold": {
+    "sidebarWidth":         260,
+    "pageAreaWidth":        1180,
+    "contentMax":           880,
+    "marketingContentMax":  680,
+    "sidebarBg":            "#1B4332",
+    "pageBg":               "#F7F5F0",
+    "surface":              "#FFFFFF",
+    "border":               "#D6D3CD",
+    "statsBg":              "#2D6A4F",
+    "tableHeaderBg":        "#EFEBE6",
+    "heroBg":               "#1B4332",
+    "leftPanelWidth":       352,
+    "rightPanelWidth":      528
+  }
+}
